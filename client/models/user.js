@@ -38,18 +38,18 @@ define("models/user",[
 			notifications:0
 		});
 
-		require(["helpers/locale", "helpers/theme"], function(locale, theme){
-			//if user has different theme after login - we need to reload page
-			if (afterlogin){
-				if (!locale.isNow(current_user.settings.language) ||
-				    !theme.isNow(current_user.settings.theme))
-				    	document.location.reload();
-			}
+		// require(["helpers/locale", "helpers/theme"], function(locale, theme){
+		// 	//if user has different theme after login - we need to reload page
+		// 	if (afterlogin){
+		// 		if (!locale.isNow(current_user.settings.language) ||
+		// 		    !theme.isNow(current_user.settings.theme))
+		// 		    	document.location.reload();
+		// 	}
 
-			//call save to store values in the local store			
-			locale.setLang(current_user.settings.language, afterlogin);
-			theme.setTheme(current_user.settings.theme, afterlogin);
-		});
+		// 	//call save to store values in the local store			
+		// 	locale.setLang(current_user.settings.language, afterlogin);
+		// 	theme.setTheme(current_user.settings.theme, afterlogin);
+		// });
 	}
 
 	function getCurrentUser(){

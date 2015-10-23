@@ -14,7 +14,7 @@
 // translation; it simply gives you a way to manage translated phrases from
 // your client- or server-side JavaScript application.
 //
-
+define('libs/polyglot', [], function(){
 !function(root) {
   'use strict';
 
@@ -281,3 +281,4 @@
   }
 
 }(this);
+})

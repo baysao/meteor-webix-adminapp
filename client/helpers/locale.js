@@ -1,7 +1,6 @@
 define("helpers/locale",[
-	"libs/polyglot",
 	"models/user"
-], function(polyglot, users){
+], function(users){
 
 	var defaultlang = "en";
 	var key = "--:app:lang";

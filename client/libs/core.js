@@ -201,23 +201,23 @@ define('libs/core', [
 	}
 
 	function render_stack(layout, stack){
-		console.log('render_stack');
+		// console.log('render_stack');
 		//debugger;
 		var line = stack[0];
 		if (line){
 			var url = line.page;
-			console.log(url);
+			// console.log(url);
 			var issubpage = url.indexOf(".") === 0;
 
 			if (issubpage)
 				url = (layout.fullname||"")+url;
 			url = url.replace(/\./g,"/");
-			console.log('a');
+			// console.log('a');
 			if (run_plugins(require_plugins, url, line, stack, layout) === false) return;
-			console.log('b');
+			// console.log('b');
 			require(["views/" + url], function(ui){
-				console.log('views/' + url);
-				console.log(ui);
+				// console.log('views/' + url);
+				// console.log(ui);
 				stack.shift();
 
 				var next = layout.sub(ui, line, stack);
@@ -288,7 +288,7 @@ define('libs/core', [
 
 		//navigation
 		router:function(name){
-			console.log('router');
+			// console.log('router');
 			var parts = parse_parts(name);
 			app.path = [].concat(parts);
 

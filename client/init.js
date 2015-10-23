@@ -12,10 +12,10 @@ define('app', [
 
 	//webix.codebase = "libs/webix/";
 	//CKEditor requires full path
-	//webix.codebase = document.location.href.split("#")[0].replace("index.html","")+"libs/webix/";
-    //
-	//if(!webix.env.touch && webix.ui.scrollSize && webix.CustomScroll)
-	//	webix.CustomScroll.init();
+	webix.codebase = document.location.href.split("#")[0].replace("index.html","")+"libs/webix/";
+    
+	// if(!webix.env.touch && webix.ui.scrollSize && webix.CustomScroll)
+	// 	webix.CustomScroll.init();
 
 
 	//if (webix.production)
@@ -45,20 +45,20 @@ define('app', [
 	return app;
 });
 Meteor.startup(function(){
-	Subs = new SubsManager({
-		// maximum number of cache subscriptions
-		cacheLimit: 10,
-		// any subscription will be expire after 5 minute, if it's not subscribed again
-		expireIn: 5
-	});
+	// Subs = new SubsManager({
+	// 	// maximum number of cache subscriptions
+	// 	cacheLimit: 10,
+	// 	// any subscription will be expire after 5 minute, if it's not subscribed again
+	// 	expireIn: 5
+	// });
 
-	Uploader.uploadUrl = Meteor.absoluteUrl("upload"); // Cordova needs absolute URL
+	// Uploader.uploadUrl = Meteor.absoluteUrl("upload"); // Cordova needs absolute URL
 
 	App = require('app');
 
 	webix.codebase = document.location.href.split("#")[0].replace("index.html","")+"libs/webix/";
-	console.log(webix.codebase);
+	// console.log(webix.codebase);
 	if(!webix.env.touch && webix.ui.scrollSize && webix.CustomScroll)
 		webix.CustomScroll.init();
-	console.log(App);
+	// console.log(App);
 })
